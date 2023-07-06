@@ -15,45 +15,50 @@
 <title>Produtos</title>
 
 <style>
+    body{
+    background-color: black; 
+    }
+
+
 table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
 }
 
 td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+	background-color: #708090;
 }
 </style>
 
 </head>
 
-<body>
+<body style="background-color: #4682B4 ">
 
-<header>
-		<nav class="navbar navbar-expand-lg bg-body-tertiary">
-			<div class="container-fluid">
+	<header >
+		<nav class="navbar navbar-expand-lg"  style="background-color: #000 ">
+			<div class="container-fluid"  >
 				<a class="navbar-brand" href="/">
-					<img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" width="38px">
-
+					
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD8ArNmFppOUYrTSftvTzxaQCRNXJTYK_Z8A&usqp=CAU" width="70px">
 				</a>
 				<button class="navbar-toggler" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarNav"
 					aria-controls="navbarNav" aria-expanded="false"
 					aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
+					<span class="navbar-toggler-icon" ></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav">
-						<li class="nav-item"><a class="nav-link " href="/estoque">Estoque de produtos </a>
+						<li class="nav-item"><a class="nav-link " style ="color:#fff" href="/estoque">Estoque de Produtos</a>
 						</li>
-						<li class="nav-item"><a class="nav-link active" href="/tabelaDeProdutos">Produtos detalhados</a>
+						<li class="nav-item"><a class="nav-link active" style ="color:#fff" href="/tabelaDeProdutos">Produtos detalhados</a>
 						
 					</ul>
 				</div>
@@ -65,37 +70,48 @@ tr:nth-child(even) {
 
 
 	<h1>Estoque</h1>
-	<a type="button" class="btn btn-primary"  href="/estoque" style="margin-left: 1650px">Detalhar todos os produtos</a>
-	<table class="table table-striped table-responsive-md">
-	  <thead>
-		  <tr>
-		    <th>Id</th>
-		    <th>Produto</th>
-		    <th>Quantidade</th>
-		    <th>Preço</th>
-		  </tr>
-	  </thead>
-  
-  <tbody>
-	  <tr th:each="estoque : ${estoqueModel}">
-	    <td th:text="${estoque.id}" ></td>
-	  
-	     <td th:text="${estoque.nomeProduto}"></td>
-	 
-	    <td th:text="${estoque.quantidade}"></td>
-	  
-	    <td th:text="${estoque.preco}"></td>
-	  </tr>
-  </tbody>
-  
-</table>	
-	
-		<footer>
-				<span
-					style="text-align: center; padding: 10px 0px; background-color:  #CCC; margin-bottom: 5px"> Todos os direitos reservados &reg Eduardo Santana, Ribeiro Rct
-				</span>
-		</footer>
 
-		</body>
+		
+		
+	
+		
+	<table class="table table-striped table-responsive-md">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Produto</th>
+				<th>Quantidade</th>
+				<th>Preço</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr th:each="estoque : ${estoqueModel}">
+				<td th:text="${estoque.id}"></td>
+
+				<td th:text="${estoque.nomeProduto}"></td>
+
+				<td th:text="${estoque.quantidade}"></td>
+
+				<td th:text="${estoque.preco}"></td>
+			</tr>
+		</tbody>
+
+	</table>
+	<div >
+		<a type="button" class="btn btn-secondary" href="/cadastrar"
+		style="text-align: center; padding: 10px 874px; margin-bottom: 5px" >Cadastrar novo produto</a>
+	</div>	
+	<div >
+	
+			<a type="button" class="btn btn-secondary" href="/estoque"
+		style="text-align: center; padding: 10px 862px; margin-bottom: 5px">Detalhar todos os produtos</a>
+	</div>
+
+	<footer style="text-align: center; padding: 10px 0px; background-color: #4682B4; margin-bottom: 5px">
+			<span>Todos os direitos reservados &reg Eduardo Santana, Carlos Daniel Ribeiro. </span>
+	</footer>
+
+</body>
 
 </html>

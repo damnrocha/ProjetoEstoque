@@ -17,19 +17,24 @@
 
 </head>
 
-<body>
+<body style="background-color: #4682B4 ">
 	
 	<div class="container my-2">
-	<h1>Sistema de controle de Estoque</h1>
+	<h1 >Sistema de controle de Estoque</h1>
 	<hr>
 	<h2> Cadastro de Produto</h2>
 	<div class="container">
-		<form action="#" th:action="@{cadastrar}"
-			th:object="${estoqueModel}" method="POST"
-			style="margin: 30px auto; width: 300px; padding:  10px 20px;"
-			>
+		<form th:action="@{/atualizar_es/{id} (id =${estoqueModel.id})}" th:object="${estoqueModel}" method="POST"
+			style="margin: 30px auto; width: 300px; padding:  10px 20px;">
 			
 			<div class="mb-3">
+				<label for="tipoId" class="form-label">Id Produto</label>
+				<input type="number" class="form-control" id="id" th:field="*{id}">
+				<span th:if="${#fields.hasErrors('id')}"
+					th:errors="*{id}">
+			</span>
+			</div>
+			<div>	
 				<label for="nomeProduto" class="form-label">Produto</label> <input
 					type="text" class="form-control" id="nomeProduto"
 					th:field="*{nomeProduto}" placeholder="Ex: celular">
@@ -97,7 +102,7 @@
 			</div>
 
 
-			<button type="submit" class="btn btn-primary">Enviar</button>
+			<button type="submit" class="btn btn-danger">Atualizar</button>
 		</form>
 
 	</div>
@@ -108,10 +113,8 @@
 	</div>
 	
 	
-	<footer>
-		<span
-			style="text-align: center; padding: 10px 0px; background-color: #CCC; margin-bottom: 5px">
-			Todos os direitos reservados &reg Eduardo Santana, Ribeiro Rct </span>
+	<footer style="text-align: center; padding: 10px 0px; background-color: #4682B4; margin-bottom: 5px">
+			<span>Todos os direitos reservados &reg Eduardo Santana, Carlos Daniel Ribeiro. </span>
 	</footer>
 
 </body>

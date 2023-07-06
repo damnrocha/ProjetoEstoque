@@ -5,7 +5,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class EstoqueModel {
 
 	@Id
@@ -22,12 +29,14 @@ public class EstoqueModel {
 	private Integer quantidade;
 	private String desconto;
 	private String urlImgm;
+	
 	public long getId() {
 		return id;
 	}
 	public void setId(long id) {
 		this.id = id;
 	}
+	
 	public String getDatEntrada() {
 		return datEntrada;
 	}
